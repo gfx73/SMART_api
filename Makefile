@@ -10,3 +10,7 @@ up:
 .PHONY: pull
 pull:
 	docker image pull gfx73/smart_api
+
+.PHONY: logs
+logs:
+	docker logs -f -t smart_api
