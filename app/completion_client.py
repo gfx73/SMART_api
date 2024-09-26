@@ -30,4 +30,7 @@ class CompletionClient:
         prompt = self.prompt.replace("{task}", task)
         prompt = prompt.replace("{goal}", goal)
         result = await self.get_completion(prompt)
+        if goal == "":
+            result.R.reason = ""
+            result.R.conclusion = True
         return result
