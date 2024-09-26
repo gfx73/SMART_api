@@ -11,3 +11,4 @@ class ResponseFormat(pydantic.BaseModel):
     A: CriteriaResponse
     R: CriteriaResponse
     T: CriteriaResponse
+    enhanced: str
