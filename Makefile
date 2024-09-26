@@ -11,6 +11,14 @@ up:
 pull:
 	docker image pull gfx73/smart_api
 
+.PHONY: push
+push:
+	docker push gfx73/smart_api
+
+.PHONY: stop
+stop:
+	docker rm -f smart_api
+
 .PHONY: logs
 logs:
 	docker logs -f -t smart_api
