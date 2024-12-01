@@ -1,0 +1,15 @@
+version: '3.4'
+
+networks:
+  stats-project:
+    driver: bridge
+
+services:
+  smart-api:
+    image: gfx73/smart_api
+    container_name: smart-api
+    restart: always
+    environment:
+      - OPENAI_API_KEY=${OPENAI_API_KEY}
+    networks:
+      - stats-project
