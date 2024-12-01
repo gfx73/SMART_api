@@ -4,8 +4,7 @@ docker-build:
 
 .PHONY: up
 up:
-	docker rm -f smart_api || true
-	docker run -p 8084:8084 --network stats-project --env-file .env --dns 8.8.8.8 --restart always -d --name smart_api gfx73/smart_api
+	docker compose up -d
 
 .PHONY: pull
 pull:
@@ -17,8 +16,8 @@ push:
 
 .PHONY: stop
 stop:
-	docker rm -f smart_api
+	docker compose down
 
 .PHONY: logs
 logs:
-	docker logs -f -t smart_api
+	docker compose logs -f smart-api

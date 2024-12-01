@@ -11,5 +11,7 @@ services:
     restart: always
     environment:
       - OPENAI_API_KEY=${OPENAI_API_KEY}
+    ports:
+      - "8084:8084"
     networks:
       - stats-project
